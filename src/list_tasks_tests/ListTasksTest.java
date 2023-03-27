@@ -79,6 +79,35 @@ class ListTasksTest {
         assertEquals(expected,listTasks.compareYesNo(ints1 , ints2));
 
     }
+    @Test
+    public void yesNo_test_oneElt(){
+        List<String>expected = Arrays.asList("No");
+
+        List<Integer> actual1 = Arrays.asList(1);
+        List<Integer> actual2 = Arrays.asList(5);
+        assertEquals(expected, listTasks.compareYesNo(actual1, actual2));
+
+    }
+    @Test
+    public void yesNo_test_Big() {
+        List<String> expected = Arrays.asList("Yes", "No"); //при equals проходит
+
+        List<Integer> actual1 = Arrays.asList( 199_999_999,399_999_999);
+        List<Integer> actual2 = Arrays.asList( 199_999_999,399_999_998);
+
+        assertEquals(expected, listTasks.compareYesNo(actual1, actual2));
+
+    }
+
+   // @Test
+    public void yesNo_test_() {
+        List<String> expected = Arrays.asList("Yes", "No"); // при == проходит
+
+        List<Integer> actual1 = Arrays.asList(127, 128);
+        List<Integer> actual2 = Arrays.asList(127, 128);
+
+        assertEquals(expected, listTasks.compareYesNo(actual1, actual2));
+    }
 
     @Test
     public void reversed_test_OneToFive_in_order(){
@@ -103,5 +132,6 @@ class ListTasksTest {
 
         assertEquals(expected,listTasks.reversed(actual));
     }
+
 
 }

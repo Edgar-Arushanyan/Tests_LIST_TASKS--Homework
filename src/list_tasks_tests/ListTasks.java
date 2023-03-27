@@ -29,7 +29,8 @@ public class ListTasks {
         List<String> res = new ArrayList<>();
 
         for (int i = 0; i<ints1.size(); i++){
-            if (ints1.get(i) == ints2.get(i)){
+          //  if (ints1.get(i) == ints2.get(i)){
+          if(ints1.get(i). equals (ints2.get(i))){
                 res.add("Yes");
             }else
                 res.add("No");
